@@ -7,10 +7,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Company"),
+        backgroundColor: Colors.brown[400],
+        title: Text(
+          "Company",
+          style: TextStyle(fontSize: 24),
+        ),
       ),
       body: Container(
-        height: 300,
+        color: Colors.brown[200],
         child: FutureBuilder(
           initialData: [],
           future: ApiService().loadData(),
@@ -24,7 +28,7 @@ class HomePage extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 18),
+                              fontSize: 20),
                         ),
                         subtitle: Text(
                           snapshot.data![index].company,
